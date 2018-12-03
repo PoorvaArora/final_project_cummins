@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/kpi.css">
+      <link rel="stylesheet" href="../css/client_info.css">
+    <link rel="stylesheet" href="../css/common.css">
+
+
+    <title>Client Details</title>
+  </head>
+  <body>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html" style="color:#cdecd3;">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="client_info.html" class="btn btn-default" style="color:#cdecd3;">Client</a>
+            </li>
+            <li class="nav-item">
+              <a href="notes.html" class="btn btn-default login" style="color:#cdecd3;">Notes</a>
+            </li>
+            <li class="nav-item">
+              <a href="site_turbine_info.html" class="btn btn-default" style="color:#cdecd3;">Site/Turbine </a>
+            </li>
+            <li class="nav-item">
+              <a href="kpi.html" class="btn btn-default active-link"> <span class="sr-only">(current)</span>KPI</a>
+            </li>
+          </ul>
+        </div>
+  </nav>
+<h4 class="kpi-header">TURBINE HEALTH</h4>
+<h4 class="client-header">Select Turbine</h4>
+<div id="agsKPI">
+<form class="turbine-form" id="newTurbineHealthForm">
+  <div class="form-group row">
+    <label for="country" class="col-md-2 col-form-label">Select Turbine</label>
+      <div class="col-md-1">
+      <select v-model="turbineId" v-on:change="fetchSensorsDeployed(turbineId)">
+        <option v-for="turbine in turbines" v-bind:value="turbine.turbineId">
+          {{turbine.turbineId}}
+        </option>
+      </select>
+    </div>
+  </div>
+    <div class="form-group row">
+      <label for="country" class="col-md-3 col-form-label">Select Sensor Deployed</label>
+        <div class="col-md-2">
+        <select v-model="sensorDeployedId" v-on:change="fetchSensorTimeSeries(sensorDeployedId)">
+          <option v-for="sensorDep in sensorsDeployed" v-bind:value="sensorDep.sensorDeployedId">
+            {{sensorDep.sensorDeployedId}}
+          </option>
+        </select>
+      </div>
+  </div>
+</form>
+<div class="row">
+  <div id="outputChart" class="col-md-6"></div>
+  <div id="heatRateChart" class="col-md-6"></div>
+</div>
+<div class="row">
+  <div id="compressorEfficiencyChart" class="col-md-6"></div>
+  <div id="availabilityChart" class="col-md-6"></div>
+</div>
+<div class="row">
+  <div id="reliabilityChart" class="col-md-6"></div>
+  <div id="fixedHoursChart" class="col-md-6"></div>
+</div>
+<div class="row">
+  <div id="tripsChart" class="col-md-6"></div>
+  <div id="startsChart" class="col-md-6"></div>
+</div>
+</div>
+</div>
+
+<div>
+
+</div>
+    <!-- jQuery, Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <script src="js/kpi.app.js"></script>
+
+  </body>
+</html>

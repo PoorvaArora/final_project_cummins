@@ -1,0 +1,18 @@
+.bg-light{
+  background: #2e9e47!important;
+}
+.nav-link{
+  color: white;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+}
+.attribution{
+  font-size: 10px;
+  text-align: right;
+  margin-top: 35px;
+}
+
+.active-link{
+  color: black;
+}

@@ -1,0 +1,19 @@
+.client-table{
+  width: 74%;
+  margin-left: 14%;
+  margin-top: 3%;
+}
+#client-form {
+  margin: 5% 0 0 27%
+}
+
+.client-header{
+  margin-left: 45%;
+  padding-top: 3%;
+  color: darkgreen;
+}
+.submit-notes-button{
+  margin-left: 55%;
+  background-color: #2e9e47;
+  border-color: none;
+}
