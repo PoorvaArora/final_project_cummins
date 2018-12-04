@@ -4,10 +4,11 @@ class ClientProduct
 {
 
   public $clientId;
-  public $engineId;
   public $clientName;
-  public $engineName;
   public $clientLocation;
+  public $engineId;
+  public $engineName;
+
 
   public function __construct($data) {
     $this->clientId = isset($data['clientId']) ? intval($data['clientId']) : null;
