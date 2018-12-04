@@ -5,13 +5,13 @@ class Client
 
   public $clientId;
   public $clientName;
-  public $clientDescription;
+  public $clientLocation;
   public $productId;
 
   public function __construct($data) {
     $this->clientId = isset($data['clientId']) ? intval($data['clientId']) : null;
     $this->clientName = $data['clientName'];
-    $this->clienLocation = $data['clienLocation'];
+    $this->clienLocation = $data['clientLocation'];
     $this->productId = $data['productId'];
   }
 
