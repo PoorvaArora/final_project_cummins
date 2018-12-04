@@ -6,19 +6,15 @@ class Client
   public $clientId;
   public $clientName;
   public $clientDescription;
-  public $gicsSector;
-  public $gicsSubIndustry;
-  public $headquarters;
+  public $productId;
 
   public function __construct($data) {
     $this->clientId = isset($data['clientId']) ? intval($data['clientId']) : null;
     $this->clientName = $data['clientName'];
-    $this->clientDescription = $data['clientDescription'];
-    $this->gicsSector = $data['gicsSector'];
-    $this->gicsSubIndustry = $data['gicsSubIndustry'];
-    $this->headquarters = $data['headquarters'];
+    $this->clienLocation = $data['clienLocation'];
+    $this->productId = $data['productId'];
   }
-  
+
   public static function fetchAll() {
     // 1. Connect to the database
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);

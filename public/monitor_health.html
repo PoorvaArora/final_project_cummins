@@ -45,42 +45,20 @@
       <tr>
         <th scope="col">Id</th>
         <th scope="col">Name</th>
-        <th scope="col">Description</th>
-        <th scope="col">Headquaters</th>
-        <th scope="col">GICS</th>
-        <th scope="col">Show Notes</th>
+        <th scope="col">Location</th>
+        <th scope="col">Product Id</th>
       </tr>
     </thead>
     <tbody>
-        <tr v-for="client in clients">
+      <tr v-for="client in clients">
         <td>{{client.clientId}}</td>
         <td>{{client.clientName}}</td>
-        <td>{{client.clientDescription}}</td>
-        <td>{{client.headquarters}}</td>
-        <td>{{client.gicsSector}}</td>
-        <td><a href="#" v-on:click="showNotes(client.clientId)">Show Notes</a></td>
+        <td>{{client.clientLocation}}</td>
+        <td>{{client.productId}}</td>
       </tr>
-    </div>
     </tbody>
   </table>
-  <table class="table table-striped client-table" id="notesTable" v-show="showTableNotes">
-  <thead class="client-header">
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Client Id</th>
-      <th scope="col">Notes</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr v-for="note in notes">
-      <td>{{note.id}}</td>
-      <td>{{note.clientId}}</td>
-      <td>{{note.note}}</td>
-    </tr>
   </div>
-  </tbody>
-</table>
-</div>
     <!-- jQuery, Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

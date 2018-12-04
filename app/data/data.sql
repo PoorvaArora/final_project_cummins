@@ -7,19 +7,30 @@ DROP TABLE IF EXISTS sensorDeployed;
 DROP TABLE IF EXISTS sensorTimeSeries;
 DROP TABLE IF EXISTS note;
 
-
-CREATE TABLE client (
-  clientId INT PRIMARY KEY NOT NULL,
-  clientName VARCHAR(31) NOT NULL,
-  clientLocation VRACHAR(31) NOT NULL,
-  FOREIGN KEY (productId) REFERENCES product(productId)
-);
-
 CREATE TABLE product (
   productId INT PRIMARY KEY NOT NULL,
   productName VARCHAR(31) NOT NULL,
   productDescription VARCHAR(31) NOT NULL
 );
+insert into product (productId, productName, productDescription) values (1001,"Engine01","Engine 1001");
+insert into product (productId, productName, productDescription) values (1002,"Engine02","Engine 1002");
+insert into product (productId, productName, productDescription) values (1003,"Engine03","Engine 1003");
+
+
+CREATE TABLE client (
+  clientId INT PRIMARY KEY NOT NULL,
+  clientName VARCHAR(31) NOT NULL,
+  clientLocation VARCHAR(31) NOT NULL,
+  productId INT NOT NULL,
+  FOREIGN KEY (productId) REFERENCES product(productId)
+);
+insert into client (clientId, clientName, clientLocation,productId) values (10024,"Dow Chemical Co","China",1001);
+insert into client (clientId, clientName, clientLocation,productId) values (10024,"Dow Chemical Co","China",1002);
+insert into client (clientId, clientName, clientLocation,productId) values (9862,"Honeywell","India",1002);
+insert into client (clientId, clientName, clientLocation,productId) values (10192,"Nucor Corp","Germany",1003);
+
+
+
 
 CREATE TABLE sensor (
   sensorId INT PRIMARY KEY NOT NULL,
