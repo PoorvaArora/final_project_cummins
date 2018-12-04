@@ -11,12 +11,15 @@ DROP TABLE IF EXISTS note;
 CREATE TABLE client (
   clientId INT PRIMARY KEY NOT NULL,
   clientName VARCHAR(31) NOT NULL,
-  clientDescription VARCHAR(200) NOT NULL,
-  gicsSector VARCHAR(31) NOT NULL,
-  gicsSubIndustry VARCHAR(31) NOT NULL,
-  headquarters VARCHAR(50) NOT NULL
+  clientLocation VRACHAR(31) NOT NULL,
+  FOREIGN KEY (productId) REFERENCES product(productId)
 );
 
+CREATE TABLE product (
+  productId INT PRIMARY KEY NOT NULL,
+  productName VARCHAR(31) NOT NULL,
+  productDescription VARCHAR(31) NOT NULL
+);
 
 CREATE TABLE sensor (
   sensorId INT PRIMARY KEY NOT NULL,
