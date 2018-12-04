@@ -8,7 +8,7 @@ class ClientProduct
 
   public function __construct($data) {
     $this->clientId = isset($data['clientId']) ? intval($data['clientId']) : null;
-    $this->productId = $data['productId']
+    $this->productId = $data['productId'];
   }
 
   public static function fetchAll() {
