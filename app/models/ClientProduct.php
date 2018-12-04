@@ -13,8 +13,8 @@ class ClientProduct
     $this->clientId = isset($data['clientId']) ? intval($data['clientId']) : null;
     $this->$engineId = $data['$engineId'];
     $this->$clientName = $data['$clientName'];
-    $this->$clientName = $data['$clientLocation'];
-    $this->$clientName = $data['$engineName'];
+    $this->$clientLocation = $data['$clientLocation'];
+    $this->$engineName = $data['$engineName'];
   }
 
   public static function fetchAll() {
