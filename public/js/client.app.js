@@ -9,7 +9,7 @@ var agsApp = new Vue({
   },
   methods: {
     fetchClients () {
-      fetch('api/client.php')
+      fetch('api/clientProduct.php')
       .then( response => response.json() )
       // ^ This is the same as .then( function(response) {return response.json()} )
       .then( json => {agsApp.clients = json})

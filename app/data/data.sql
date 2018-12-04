@@ -1,4 +1,5 @@
 DROP TABLE IF EXISTS client;
+DROP TABLE IF EXISTS engine;
 DROP TABLE IF EXISTS sensor;
 DROP TABLE IF EXISTS turbine;
 DROP TABLE IF EXISTS site;
@@ -7,30 +8,45 @@ DROP TABLE IF EXISTS sensorDeployed;
 DROP TABLE IF EXISTS sensorTimeSeries;
 DROP TABLE IF EXISTS note;
 
-CREATE TABLE product (
-  productId INT PRIMARY KEY NOT NULL,
-  productName VARCHAR(31) NOT NULL,
-  productDescription VARCHAR(31) NOT NULL
+CREATE TABLE engine (
+  engineId INT PRIMARY KEY NOT NULL,
+  engineName VARCHAR(31) NOT NULL,
+  engineDescription VARCHAR(31) NOT NULL
 );
-insert into product (productId, productName, productDescription) values (1001,"Engine01","Engine 1001");
-insert into product (productId, productName, productDescription) values (1002,"Engine02","Engine 1002");
-insert into product (productId, productName, productDescription) values (1003,"Engine03","Engine 1003");
+insert into engine (engineId, engineName, engineDescription) values (1001,"Engine01","Engine 1001");
+insert into engine (engineId, engineName, engineDescription) values (1002,"Engine02","Engine 1002");
+insert into engine (engineId, engineName, engineDescription) values (1003,"Engine03","Engine 1003");
 
 
 CREATE TABLE client (
   clientId INT PRIMARY KEY NOT NULL,
   clientName VARCHAR(31) NOT NULL,
-  clientLocation VARCHAR(31) NOT NULL,
-  productId INT NOT NULL,
-  FOREIGN KEY (productId) REFERENCES product(productId)
+  clientLocation VARCHAR(31) NOT NULL
+  -- productId INT NOT NULL,
+  -- FOREIGN KEY (productId) REFERENCES product(productId)
 );
-insert into client (clientId, clientName, clientLocation,productId) values (10024,"Dow Chemical Co","China",1001);
-insert into client (clientId, clientName, clientLocation,productId) values (10024,"Dow Chemical Co","China",1002);
-insert into client (clientId, clientName, clientLocation,productId) values (9862,"Honeywell","India",1002);
-insert into client (clientId, clientName, clientLocation,productId) values (10192,"Nucor Corp","Germany",1003);
 
+insert into client (clientId, clientName, clientLocation) values (10024,"Dow Chemical Co","China");
+insert into client (clientId, clientName, clientLocation) values (9862,"Honeywell","India");
+insert into client (clientId, clientName, clientLocation) values (10192,"Nucor Corp","Germany");
 
+CREATE TABLE client_engine_info (
+    clientId INT NOT NULL,
+    engineId INT NOT NULL,
+    FOREIGN KEY (clientId) REFERENCES client(clientId),
+    FOREIGN KEY (engineId) REFERENCES engine(engineId),
+    PRIMARY KEY (clientId, engineId)
+  );
+insert into client_engine_info (clientId, engineId) values (10024, 1001);
+insert into client_engine_info (clientId, engineId) values (10024, 1002);
+insert into client_engine_info (clientId, engineId) values (9862, 1002);
+insert into client_engine_info (clientId, engineId) values (10192, 1003);
 
+DROP VIEW IF EXISTS cummins;
+CREATE VIEW  AS cummins
+(SELECT c.clientId, c.clientName, c.clientLocation, e.engineId, e.engineName, e.engineDescription
+FROM client c LEFT JOIN engineId e ON e.engineId = c.clientId
+WHERE c.clientId IS NOT NULL);
 
 CREATE TABLE sensor (
   sensorId INT PRIMARY KEY NOT NULL,

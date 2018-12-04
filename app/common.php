@@ -13,6 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'
 
 /** MODELS **/
 require 'models/Client.php';
+require 'models/ClientProduct.php';
 require 'models/Sensor.php';
 require 'models/SensorDeployed.php';
 require 'models/SensorTimeSeries.php';
