@@ -11,10 +11,10 @@ class ClientProduct
 
   public function __construct($data) {
     $this->clientId = isset($data['clientId']) ? intval($data['clientId']) : null;
-    $this->$engineId = $data['engineId'];
     $this->$clientName = $data['clientName'];
-    $this->$engineName = $data['engineName'];
     $this->$clientLocation = $data['clientLocation'];
+    $this->$engineId = $data['engineId'];
+    $this->$engineName = $data['engineName'];
   }
 
   public static function fetchAll() {
