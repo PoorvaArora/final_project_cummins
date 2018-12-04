@@ -42,6 +42,8 @@ insert into client_engine_info (clientId, engineId) values (10024, 1002);
 insert into client_engine_info (clientId, engineId) values (9862, 1002);
 insert into client_engine_info (clientId, engineId) values (10192, 1003);
 
+select cei.clientId, c.clientName, c.clientLocation, cei.engineId, e.engineName from client_engine_info cei inner join client c on cei.clientId = c.clientId inner join engine e on cei.engineId = e.engineId;
+
 DROP VIEW IF EXISTS cummins;
 CREATE VIEW  AS cummins
 (SELECT c.clientId, c.clientName, c.clientLocation, e.engineId, e.engineName, e.engineDescription
