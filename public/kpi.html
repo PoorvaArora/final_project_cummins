@@ -40,30 +40,7 @@
         </div>
   </nav>
 <h4 class="kpi-header">TURBINE HEALTH</h4>
-<h4 class="client-header">Select Turbine</h4>
 <div id="agsKPI">
-<form class="turbine-form" id="newTurbineHealthForm">
-  <div class="form-group row">
-    <label for="country" class="col-md-2 col-form-label">Select Turbine</label>
-      <div class="col-md-1">
-      <select v-model="turbineId" v-on:change="fetchSensorsDeployed(turbineId)">
-        <option v-for="turbine in turbines" v-bind:value="turbine.turbineId">
-          {{turbine.turbineId}}
-        </option>
-      </select>
-    </div>
-  </div>
-    <div class="form-group row">
-      <label for="country" class="col-md-3 col-form-label">Select Sensor Deployed</label>
-        <div class="col-md-2">
-        <select v-model="sensorDeployedId" v-on:change="fetchSensorTimeSeries(sensorDeployedId)">
-          <option v-for="sensorDep in sensorsDeployed" v-bind:value="sensorDep.sensorDeployedId">
-            {{sensorDep.sensorDeployedId}}
-          </option>
-        </select>
-      </div>
-  </div>
-</form>
 <div class="row">
   <div id="outputChart" class="col-md-6"></div>
   <div id="heatRateChart" class="col-md-6"></div>
