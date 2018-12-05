@@ -3,7 +3,8 @@ var agsApp = new Vue({
   data: {
     clients:[],
     successAlert: false,
-    failureAlert: false
+    failureAlert: false,
+    showBusyCursor: false
   },
   computed: {
   },
@@ -20,12 +21,16 @@ var agsApp = new Vue({
     },
     checkStatus(clientId,engineId){
       if(clientId == 9862 && engineId == 1002){
+          setTimeout(function(){ this.showBusyCursor = true; }, 3000);
           this.failureAlert = true;
           this.successAlert = false;
+          this.showBusyCursor = false;
       }
       else {
+        setTimeout(function(){ this.showBusyCursor = true; }, 3000);
         this.successAlert = true;
         this.failureAlert = false;
+        this.showBusyCursor = false;
       }
     },
   },
