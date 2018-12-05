@@ -17,7 +17,15 @@ var agsApp = new Vue({
         console.log('TASK FETCH ERROR:');
         console.log(err);
       })
-    }
+    },
+    checkStatus(clientId,engineId){
+      if(clientId == 10024 && engineId == 1001){
+        alert("fix");
+      }
+      else {
+        alert("fine");
+      }
+    },
   },
   created () {
     this.fetchClients();

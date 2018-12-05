@@ -48,6 +48,7 @@
         <th scope="col">Location</th>
         <th scope="col">Engine Id</th>
         <th scope="col">Engine Description</th>
+        <th scope="col">Status</th>
       </tr>
     </thead>
     <tbody>
@@ -57,6 +58,7 @@
         <td>{{client.clientLocation}}</td>
         <td>{{client.engineId}}</td>
         <td>{{client.engineName}}</td>
+        <td><a href="#" v-on:click="checkStatus(client.clientId, client.engineId)">Check Status</a></td>
       </tr>
     </tbody>
   </table>
