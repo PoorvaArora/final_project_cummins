@@ -2,8 +2,8 @@ var agsApp = new Vue({
   el: '#agsClient',
   data: {
     clients:[],
-    notes:[],
-    showTableNotes: false
+    successAlert: false,
+    failureAlert: false
   },
   computed: {
   },
@@ -20,7 +20,7 @@ var agsApp = new Vue({
     },
     checkStatus(clientId,engineId){
       if(clientId == 10024 && engineId == 1001){
-        failureAlert = true;
+          failureAlert = true;
       }
       else {
         successAlert = true;
