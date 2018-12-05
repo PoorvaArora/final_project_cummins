@@ -2,9 +2,9 @@
 
 require '../../app/common.php';
 
-$sensorDeployedId = intval($_GET['sensorDeployedId'] ?? 0);
+$sensorId = intval($_GET['sensorId'] ?? 0);
 
-if($sensorDeployedId < 1){
+if($sensorId < 1){
   // 1. Go to the database and get all client
   $sensorTimeSeries = SensorTimeSeries::fetchAll();
 
@@ -16,10 +16,10 @@ if($sensorDeployedId < 1){
   echo $json;
 }
 else {
-$sensorTimeSeriesBySensorDeployedId = SensorTimeSeries::fetchTimeSeriesByTurbineId($sensorDeployedId);
+$sensorTimeSeriesBySensorId = SensorTimeSeries::fetchTimeSeriesBySensorId($sensorId);
 
 // 2. Convert to JSON
-$json = json_encode($sensorTimeSeriesBySensorDeployedId, JSON_PRETTY_PRINT);
+$json = json_encode($sensorTimeSeriesBySensorId, JSON_PRETTY_PRINT);
 
 // 3. Print
 header('Content-Type: application/json');

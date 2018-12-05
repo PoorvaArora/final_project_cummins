@@ -2,66 +2,35 @@
 
 class sensorTimeSeries
 {
-  public $sensorDeployedId;
+  public $sensorId;
   public $dataCollectedDate;
-  public $output;
-  public $heartRate;
-  public $compressorEfficiency;
-  public $availability;
-  public $reliability;
+  public $thermalEfficiency;
   public $firedHours;
-  public $trips;
-  public $starts;
+  public $unnitiatedShutdownRate;
+  public $fuelConsumption;
 
   public function __construct($data) {
-    $this->sensorDeployedId = isset($data['sensorDeployedId']) ? intval($data['sensorDeployedId']) : null;
+    $this->sensorDeployedId = isset($data['sensorId']) ? intval($data['sensorId']) : null;
     $this->dataCollectedDate = $data['dataCollectedDate'];
-    $this->output = $data['output'];
-    $this->heatRate = $data['heatRate'];
-    $this->compressorEfficiency = $data['compressorEfficiency'];
-    $this->availability = $data['availability'];
-    $this->compressorEfficiency = $data['compressorEfficiency'];
-    $this->reliability = $data['reliability'];
+    $this->thermalEfficiency = $data['thermalEfficiency'];
     $this->firedHours = $data['firedHours'];
-    $this->trips = $data['trips'];
-    $this->starts= $data['starts'];
-
+    $this->unnitiatedShutdownRate = $data['unnitiatedShutdownRate'];
+    $this->fuelConsumption = $data['fuelConsumption'];
   }
 
-  public static function fetchAll() {
+  public static function fetchTimeSeriesBySensorId(int $sensorId) {
     // 1. Connect to the database
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
     // 2. Prepare the query
-    $sql = 'SELECT * FROM sensorTimeSeries';
-    $statement = $db->prepare($sql);
-
-    // 3. Run the query
-    $success = $statement->execute();
-
-    // 4. Handle the results
-    $arr = [];
-    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-      $thesensorTimeSeries =  new SensorTimeSeries($row);
-      array_push($arr, $thesensorTimeSeries);
-    }
-
-    return $arr;
-  }
-
-  public static function fetchTimeSeriesByTurbineId(int $sensorDeployedId) {
-    // 1. Connect to the database
-    $db = new PDO(DB_SERVER, DB_USER, DB_PW);
-
-    // 2. Prepare the query
-    $sql = 'SELECT * from sensorTimeSeries where sensorDeployedId = ?';
+    $sql = 'SELECT * from engine_time_series where sensorId = ?';
     //$sql = 'SELECT * FROM note WHERE clientId = ?';
 
     $statement = $db->prepare($sql);
 
     // 3. Run the query
     $success = $statement->execute(
-        [$sensorDeployedId]
+        [$sensorId]
     );
 
     // 4. Handle the results
