@@ -24,7 +24,7 @@ class ClientProduct
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
     // 2. Prepare the query
-    $sql = 'SELECT cei.clientId, c.clientName, c.clientLocation, cei.engineId, e.engineName from client_engine_info cei inner join client c on cei.clientId = c.clientId inner join engine e on cei.engineId = e.engineId';
+    $sql = 'SELECT cei.clientId, c.clientName, c.clientLocation, cei.engineId, e.engineName, cei.sensorId from client_engine_info cei inner join client c on cei.clientId = c.clientId inner join engine e on cei.engineId = e.engineId';
     $statement = $db->prepare($sql);
 
     // 3. Run the query
