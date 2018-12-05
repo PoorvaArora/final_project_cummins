@@ -19,13 +19,13 @@ var agsApp = new Vue({
       })
     },
     checkStatus(clientId,engineId){
-      if(clientId == 10024 && engineId == 1001){
+      if(clientId == 9862 && engineId == 1002){
           this.failureAlert = true;
           this.successAlert = false;
       }
       else {
-        successAlert = true;
-        failureAlert = false;
+        this.successAlert = true;
+        this.failureAlert = false;
       }
     },
   },
