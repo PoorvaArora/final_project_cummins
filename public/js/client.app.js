@@ -21,16 +21,18 @@ var agsApp = new Vue({
     },
     checkStatus(clientId,engineId){
       if(clientId == 9862 && engineId == 1002){
-          setTimeout(function(){ this.showBusyCursor = true; }, 3000);
+          setTimeout(function(){
           this.failureAlert = true;
           this.successAlert = false;
           this.showBusyCursor = false;
+        }, 3000);
       }
       else {
-        setTimeout(function(){ this.showBusyCursor = true; }, 3000);
+        setTimeout(function(){
         this.successAlert = true;
         this.failureAlert = false;
         this.showBusyCursor = false;
+      }, 3000);
       }
     },
   },
