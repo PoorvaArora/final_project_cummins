@@ -8,12 +8,14 @@ class ClientProduct
   public $clientLocation;
   public $engineId;
   public $engineName;
+  public $sensorId;
 
   public function __construct($data) {
     $this->clientId = isset($data['clientId']) ? intval($data['clientId']) : null;
     $this->clientName = $data['clientName'];
     $this->clientLocation = $data['clientLocation'];
     $this->engineId = $data['engineId'];
+    $this->sensorId = $data['sensorId'];
     $this->engineName = $data['engineName'];
   }
 
