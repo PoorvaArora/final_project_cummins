@@ -39,7 +39,7 @@
           </ul>
         </div>
   </nav>
-<h4 class="kpi-header">TURBINE HEALTH</h4>
+<h4 class="kpi-header">ENGINE HEALTH</h4>
 <div id="agsKPI">
 <div class="row">
   <div id="unnitiatedShutdownRateChart" class="col-md-6"></div>
@@ -49,6 +49,16 @@
   <div id="fuelConsumptionChart" class="col-md-6"></div>
   <div id="firedHoursChart" class="col-md-6"></div>
 </div>
+<form id="client-form" @submit.prevent="handleNoteForm" id="newNoteForm">
+<div class="form-group row">
+  <label for="places" class="col-md-3 col-form-label">Enter notes regarding your observations</label>
+  <div class="col-md-4">
+    <textarea class="form-control" rows="5" id="note" v-model="noteForm.note"></textarea>
+  </div>
+</div>
+<button type="submit" id="submitNewNote" class="btn btn-primary submit-notes-button">Submit</button>
+</form>
+
 </div>
 
     <!-- jQuery, Bootstrap JS -->
