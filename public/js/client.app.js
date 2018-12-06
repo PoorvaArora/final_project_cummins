@@ -37,14 +37,6 @@ var agsApp = new Vue({
     },
     checkDetails(sensorId){
       window.location.replace("kpi.html?"+sensorId);
-      // fetch('api/sensorTimeSeries.php?sensorId='+sensorId)
-      // .then( response => response.json() )
-      // // ^ This is the same as .then( function(response) {return response.json()} )
-      // .then( json => {kpiApp.sensorsDeployed = json})
-      // .catch( err => {
-      //   console.log('TASK FETCH ERROR:');
-      //   console.log(err);
-      // })
     }
   },
   created () {
