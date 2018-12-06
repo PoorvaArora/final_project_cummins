@@ -43,7 +43,7 @@ var kpiApp = new Vue({
       )
     },
     buildThermalEfficiencyChart() {
-      Highcharts.chart(thermalEfficiencyChart', {
+      Highcharts.chart('thermalEfficiencyChart', {
             chart: {
                 zoomType: 'x'
             },
