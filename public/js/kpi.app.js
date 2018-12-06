@@ -92,8 +92,8 @@ var kpiApp = new Vue({
                 name: 'Trips',
                 data: kpiApp.sensorTime.map( entry=>
                   [entry.dateCollected, entry.thermalEfficiency]
-                );
-            }];
+                )
+            }]
         });
     },
     buildUnnitiatedShutdownRateChart() {
