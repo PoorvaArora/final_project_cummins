@@ -10,7 +10,7 @@ class sensorTimeSeries
   public $fuelConsumption;
 
   public function __construct($data) {
-    $this->sensorDeployedId = isset($data['sensorId']) ? intval($data['sensorId']) : null;
+    $this->sensorId = isset($data['sensorId']) ? intval($data['sensorId']) : null;
     $this->dataCollectedDate = $data['dataCollectedDate'];
     $this->thermalEfficiency = $data['thermalEfficiency'];
     $this->firedHours = $data['firedHours'];
