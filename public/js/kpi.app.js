@@ -35,10 +35,10 @@ var kpiApp = new Vue({
       this.sensorTime.forEach(
         (entry, index, arr) => {
           entry.dateCollected = Date.parse(entry.dataCollectedDate);
-          entry.heatRate = Number(entry.thermalEfficiency);
-          entry.compressorEfficiency = Number(entry.firedHours);
-          entry.availability = Number(entry.unnitiatedShutdownRate);
-          entry.reliability = Number(entry.fuelConsumption);
+          entry.thermalEfficiency = Number(entry.thermalEfficiency);
+          entry.firedHours = Number(entry.firedHours);
+          entry.unnitiatedShutdownRate = Number(entry.unnitiatedShutdownRate);
+          entry.fuelConsumption = Number(entry.fuelConsumption);
         }
       )
     },
