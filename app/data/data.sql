@@ -130,11 +130,15 @@ CREATE TABLE sensorTimeSeries
 );
 
 CREATE TABLE note (
-  id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
   note VARCHAR(30) NOT NULL,
   clientId INT NOT NULL,
-  FOREIGN KEY (clientId) REFERENCES client(clientId)
+  sensorId INT NOT NULL,
+  engineId INT NOT NULL
 );
+
+INSERT INTO note (clientId, sensorId, engineId, note)
+VALUES (10024, 1002401, 1001, "Multiple Shutdown in past few months");
+
 
 INSERT INTO note (id, note, clientId)
 VALUES (1, 'I have a note', 1);

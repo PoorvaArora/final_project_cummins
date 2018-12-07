@@ -60,7 +60,7 @@
         <td>{{client.clientLocation}}</td>
         <td>{{client.engineId}}</td>
         <td>{{client.engineName}}</td>
-        <td><a href="#" v-on:click="checkDetails(client.sensorId)">{{client.sensorId}}</a></td>
+        <td><a href="#" v-on:click="checkDetails(client.sensorId,client.clientId,client.engineId)">{{client.sensorId}}</a></td>
         <td><a href="#" v-on:click="checkStatus(client.clientId, client.engineId)">Check Status</a></td>
       </tr>
     </tbody>

@@ -2,19 +2,21 @@
 
 class Note
 {
-  public $id;
+  public $engineId;
   public $clientId;
+  public $sensorId;
   public $note;
 
   public function __construct($data) {
-    $this->id = isset($data['id']) ? intval($data['id']) : null;
-    $this->clientId =  intval($data['clientId']);
+    $this->clientId = isset($data['clientId']) ? intval($data['clientId']) : null;
+    $this->engineId =  intval($data['engineId']);
+    $this->sensorId =  intval($data['sensorId']);
     $this->note = $data['note'];
   }
 
   public function create() {
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
-    $sql = 'INSERT INTO note (id,clientId, note)
+    $sql = 'INSERT INTO note (clientId, engineId, sensorId, note)
             VALUES (?,?,?)';
 
     $statement = $db->prepare($sql);

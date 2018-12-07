@@ -21,11 +21,9 @@ var agsApp = new Vue({
     },
     checkStatus(clientId,engineId){
       if(clientId == 9862 && engineId == 1002){
-          setTimeout(function(){
           this.failureAlert = true;
           this.successAlert = false;
           this.showBusyCursor = false;
-        }, 3000);
       }
       else {
         setTimeout(function(){
@@ -35,8 +33,8 @@ var agsApp = new Vue({
       }, 3000);
       }
     },
-    checkDetails(sensorId){
-      window.location.replace("kpi.html?"+sensorId);
+    checkDetails(sensorId,clientId,engineId){
+      window.location.replace("kpi.html?sensorId"+sensorId+"&clientId"+clientId+"&engineId"+engineId);
     }
   },
   created () {

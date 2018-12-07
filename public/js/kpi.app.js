@@ -13,7 +13,8 @@ var kpiApp = new Vue({
   methods: {
     fetchSensorTimeSeries() {
       var urlArray = window.location.href.split("?");
-      var sensorId = urlArray[1];
+      var numIds = urlArray[1].match(/\d+/g).map(Number);
+      var sensorId = numIds[0];
       fetch('api/sensorTimeSeries.php?sensorId='+sensorId)
       .then( response => response.json() )
       // ^ This is the same as .then( function(response) {return response.json()} )
@@ -257,6 +258,32 @@ var kpiApp = new Vue({
                 )
             }]
         });
+    },
+    handleNoteForm(e) {
+      const s = JSON.stringify(this.noteForm);
+      console.log(s);
+      // POST to remote server
+      fetch('api/note.php', {
+        method: "POST", // *GET, POST, PUT, DELETE, etc.
+        headers: {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        body: s // body data type must match "Content-Type" header
+      })
+      .then(response => response.json())
+      .then(json => {
+        this.notes.push(json)
+      })
+      .catch(err => {
+        console.error('NOTE POST ERROR:');
+        console.error(err);
+      });
+      this.noteForm = this.getEmptyNoteForm();
+    },
+    getEmptyNoteForm() {
+      return {
+        note: ''
+      }
     },
   },
   created () {
