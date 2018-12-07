@@ -52,14 +52,14 @@
   <div id="thermalEfficiencyChart" class="col-md-6"></div>
   <div id="firedHoursChart" class="col-md-6"></div>
 </div>
-<form id="client-form" id="newNoteForm">
+<form id="client-form">
   <div class="form-group row">
     <label for="places" class="col-md-3 col-form-label">Enter your observations</label>
     <div class="col-md-4">
-      <textarea class="form-control" rows="5" id="note" v-model="noteForm.note"></textarea>
+      <textarea class="form-control" rows="5" id="note"></textarea>
     </div>
   </div>
-  <button type="submit" id="submitNewNote" class="btn btn-primary submit-notes-button">Submit</button>
+  <button type="submit" v-on:click="getEmptyNoteForm()" id="submitNewNote" class="btn btn-primary submit-notes-button">Submit</button>
 </form>
 </div>
 

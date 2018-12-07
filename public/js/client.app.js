@@ -26,11 +26,9 @@ var agsApp = new Vue({
           this.showBusyCursor = false;
       }
       else {
-        setTimeout(function(){
         this.successAlert = true;
         this.failureAlert = false;
         this.showBusyCursor = false;
-      }, 3000);
       }
     },
     checkDetails(sensorId,clientId,engineId){
