@@ -262,9 +262,7 @@ var kpiApp = new Vue({
         });
     },
     getEmptyNoteForm() {
-      return {
         this.note= ''
-      }
     },
   },
   created () {
