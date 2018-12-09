@@ -10,10 +10,10 @@
 .client-header{
   margin-left: 45%;
   padding-top: 3%;
-  color: darkgreen;
+  color: #cc0000;
 }
 .submit-notes-button{
   margin-left: 55%;
-  background-color: #2e9e47;
+  background-color: #cc0000;
   border-color: none;
 }

@@ -1,4 +1,4 @@
-.bg-light{
+/* .bg-light{
   background: #d30313!important;
 }
 .nav-link{
@@ -15,4 +15,20 @@
 
 .active-link{
   color: black;
+}
+ */
+ .navbar-custom {
+     background-color: black;
+ }
+ .nav-link {
+   color: white;
+ }
+
+nav a:hover {
+  color: #b30000;
+}
+
+.navbar-brand {
+  padding-left: 10px;
+  color:  #cc0000;
 }

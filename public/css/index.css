@@ -27,3 +27,9 @@
 .card-text{
   color: black;
 }
+
+.header h1 {
+  color: white;
+  text-shadow: 2px 0 0 black;
+  padding-top: 60px;
+}

@@ -7,32 +7,31 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/kpi.css">
-      <link rel="stylesheet" href="../css/client_info.css">
-    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="css/kpi.css">
+      <link rel="stylesheet" href="css/client_info.css">
+    <link rel="stylesheet" href="css/common.css">
 
 
     <title>Client Details</title>
   </head>
   <body>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html" style="color:#cdecd3;">Home</a>
-            </li>
-            <li class="nav-item">
-              <a href="monitor_health.html" class="btn btn-default" style="color:#cdecd3;">Client</a>
-            </li>
-            <li class="nav-item">
-              <a href="kpi.html" class="btn btn-default active-link"> <span class="sr-only">(current)</span>KPI</a>
-            </li>
-          </ul>
-        </div>
-  </nav>
+    <nav class="navbar navbar-expand-sm navbar-custom">
+      <a href="index.html" class="pull-left"><img src="img/cummins_Logo.png" height=30px></a>
+  <a href="#" class="navbar-brand">Cummins</a>
+  <div class="navbar-collapse collapse" id="navbarCustom">
+       <ul class="navbar-nav">
+          <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="monitor_health.html">Client</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="kpi.html">KPIs</a>
+          </li>
+      </ul>
+  </div>
+</nav>
 <h4 class="kpi-header">ENGINE HEALTH</h4>
 <div id="agsKPI">
 <div class="row">
@@ -43,7 +42,7 @@
   <div id="thermalEfficiencyChart" class="col-md-6"></div>
   <div id="firedHoursChart" class="col-md-6"></div>
 </div>
-<h4 class="client-header">Add notes</h4>
+<h4 class="client-header">Add Notes</h4>
 <form id="client-form">
   <div class="form-group row">
     <label for="staticName" class="col-md-3 col-form-label">Staff Name</label>
@@ -62,10 +61,10 @@
     <div class="col-md-4">
       <textarea class="form-control" rows="5" id="note"></textarea>
     </div>
-  </div>
+    </div>
   <button type="reset" id="submitNewNote" class="btn btn-primary submit-notes-button">Submit</button>
 </form>
-</div>
+
 
   <!-- jQuery, Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>

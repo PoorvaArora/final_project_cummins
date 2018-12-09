@@ -1,7 +1,7 @@
 .kpi-header{
   margin: 2% 0 0 41%;
   font-family: sans-serif;
-  color: #079207;
+  color: #cc0000;
   font-size: 30px;
 }
 .text {
@@ -9,4 +9,16 @@
 }
 .turbine-form {
   margin: 0 0 0 44%;
+}
+
+#submitNewNote {
+  display: block;
+    margin: 0 auto;
+    width: 295px;
+    margin-left: 240px;
+    border-color: black;
+}
+
+#submitNewNote:hover {
+  background-color: #b30000;
 }
