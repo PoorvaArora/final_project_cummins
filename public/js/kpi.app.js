@@ -259,6 +259,31 @@ var kpiApp = new Vue({
             }]
         });
     },
+    handleNoteForm(e) {
+      var urlArray = window.location.href.split("?");
+      var numIds = urlArray[1].match(/\d+/g).map(Number);
+      this.noteForm.clientId = numIds[1];
+    const s = JSON.stringify(this.noteForm);
+    console.log(s);
+    // POST to remote server
+    fetch('api/note.php', {
+      method: "POST", // *GET, POST, PUT, DELETE, etc.
+      headers: {
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      body: s // body data type must match "Content-Type" header
+    })
+    .then(response => response.json())
+    .then(json => {
+      this.notes.push(json)
+    })
+    .catch(err => {
+      console.error('NOTE POST ERROR:');
+      console.error(err);
+    });
+    this.noteForm = this.getEmptyNoteForm();
+  },
+
   },
   created () {
     this.fetchSensorTimeSeries();

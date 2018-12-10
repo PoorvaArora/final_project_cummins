@@ -40,26 +40,26 @@
   <div id="firedHoursChart" class="col-md-6"></div>
 </div>
 <h4 class="client-header">Add Notes</h4>
-<form id="client-form">
+<form id="client-form" @submit.prevent="handleNoteForm" id="newNoteForm">
   <div class="form-group row">
     <label for="staticName" class="col-md-3 col-form-label">Staff Name</label>
     <div class="col-md-4">
-      <input type="text" class="form-control" id="staticName">
+      <input type="text" class="form-control" v-model="noteForm.name" id="staticName">
     </div>
   </div>
   <div class="form-group row">
     <label for="example-datetime-local-input" class="col-md-3 col-form-label">Date</label>
       <div class="col-md-4">
-        <input class="form-control" type="date"  id="example-date">
+        <input class="form-control" type="date" v-model="noteForm.date" id="example-date">
       </div>
   </div>
   <div class="form-group row">
     <label for="places" class="col-md-3 col-form-label">Enter your observations</label>
     <div class="col-md-4">
-      <textarea class="form-control" rows="5" id="note"></textarea>
+      <textarea class="form-control" v-model="noteForm.note" rows="5" id="note"></textarea>
     </div>
     </div>
-  <button type="reset" id="submitNewNote" class="btn btn-primary submit-notes-button">Submit</button>
+  <button type="submit" id="submitNewNote" class="btn btn-primary submit-notes-button">Submit</button>
 </form>
 
 
