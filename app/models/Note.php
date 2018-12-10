@@ -11,7 +11,7 @@ class Note
   public function __construct($data) {
     $this->clientId = isset($data['clientId']) ? intval($data['clientId']) : null;
     $this->name =  $data['name'];
-    $this->dateId =  $data['dateId'];
+    $this->dateId =  $data['date'];
     $this->note = $data['note'];
     $this->engineId = intval($data['engineId']);
   }
