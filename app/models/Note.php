@@ -13,7 +13,7 @@ class Note
     $this->name =  $data['name'];
     $this->dateId =  $data['date'];
     $this->note = $data['note'];
-    $this->engineId = intval($data['date']);
+    $this->engineId = intval($data['engineId']);
   }
 
   public function create() {
