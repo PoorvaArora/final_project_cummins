@@ -264,6 +264,7 @@ var kpiApp = new Vue({
       var urlArray = window.location.href.split("?");
       var numIds = urlArray[1].match(/\d+/g).map(Number);
       this.noteForm.clientId = numIds[1];
+      this.noteForm.engineId = numIds[2];
     const s = JSON.stringify(this.noteForm);
     console.log(s);
     // POST to remote server

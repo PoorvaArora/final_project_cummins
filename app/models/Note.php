@@ -2,37 +2,39 @@
 
 class Note
 {
-  public $engineId;
+  public $name;
   public $clientId;
-  public $sensorId;
+  public $dateId;
   public $note;
+  public $engineId;
 
   public function __construct($data) {
     $this->clientId = isset($data['clientId']) ? intval($data['clientId']) : null;
-    $this->engineId =  intval($data['engineId']);
-    $this->sensorId =  intval($data['sensorId']);
+    $this->name =  $data['name'];
+    $this->dateId =  $data['date'];
     $this->note = $data['note'];
+    $this->engineId = intval($data['date']);
   }
 
   public function create() {
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
-    $sql = 'INSERT INTO note (clientId, engineId, sensorId, note)
-            VALUES (?,?,?)';
+    $sql = 'INSERT INTO note (clientId, name, dateId, note,engineId)
+            VALUES (?,?,?,?,?)';
 
     $statement = $db->prepare($sql);
 
     $success = $statement->execute([
-      $this->id,
       $this->clientId,
-      $this->note
-
+      $this->name,
+      $this->dateId,
+      $this->note,
+      $this->engineId
     ]);
 
     if (!$success) {
       // TODO: Better error handling
       die('SQL error');
     }
-    $this->id = $db->lastInsertId();
   }
 
   public static function fetchAll() {

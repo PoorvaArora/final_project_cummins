@@ -29,19 +29,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>1001</td>
-        <td>Connor William</td>
-        <td>12/07/2018</td>
-        <td>The engine is likely to break down in 2 weeks because of high heat and unnitiated shutdown rates.
-          We have scheduled a visit from our service team.</td>
+      <tr v-for="note in notes">
+        <td>{{note.engineId}}</td>
+        <td>{{note.name}}</td>
+        <td>{{note.dateId}}</td>
+        <td>{{note.note}}</td>
       </tr>
-        <tr>
-          <td>1002</td>
-          <td>Adam Schmidt</td>
-          <td>12/05/2018</td>
-          <td>This engine looks in good shape.</td>
-        </tr>
     </tbody>
   </table>
   </div>
