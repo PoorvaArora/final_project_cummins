@@ -284,8 +284,14 @@ var kpiApp = new Vue({
     });
     this.noteForm = this.getEmptyNoteForm();
   },
-
+  getEmptyNoteForm() {
+        return {
+          note: '',
+          date:'',
+          name:''
+  }
   },
+},
   created () {
     this.fetchSensorTimeSeries();
   }
