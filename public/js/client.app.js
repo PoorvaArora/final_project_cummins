@@ -20,7 +20,7 @@ var agsApp = new Vue({
       })
     },
     checkStatus(clientId,engineId){
-      if(clientId == 9862 && engineId == 1002){
+      if(clientId == 10024 && engineId == 1001){
           this.failureAlert = true;
           this.successAlert = false;
           this.showBusyCursor = false;

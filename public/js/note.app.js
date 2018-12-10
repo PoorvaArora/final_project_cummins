@@ -17,7 +17,7 @@ var notesApp = new Vue({
       .catch( err => {
         console.log('NOTE FETCH ERROR:');
         console.log(err);
-      })
+      });
     },
   },
   created () {

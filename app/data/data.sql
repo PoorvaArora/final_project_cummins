@@ -82,7 +82,7 @@ CREATE TABLE sensorTimeSeries
 );
 
 CREATE TABLE note (
-  note VARCHAR(30) NOT NULL,
+  note VARCHAR(100) NOT NULL,
   clientId INT NOT NULL,
   name VARCHAR(30) NOT NULL,
   dateId DATE NOT NULL,
