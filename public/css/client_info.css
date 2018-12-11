@@ -17,12 +17,12 @@
   background-color: #cc0000;
   border-color: none;
 }
-#successModal.model-content{
+#successModal.modal-content{
 background-color: #dff0d8!important;
 border-color: #d0e9c6!important;
 color: #3c763d!important;
 }
-#failureModal.model-content{
+#failureModal.modal-content{
 background-color: #f2dede!important;
 border-color: #ebcccc!important;
 color: #a94442!important;
