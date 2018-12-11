@@ -21,9 +21,10 @@ var agsApp = new Vue({
     },
     checkStatus(clientId,engineId){
       if(clientId == 10024 && engineId == 1001){
-          this.failureAlert = true;
-          this.successAlert = false;
-          this.showBusyCursor = false;
+          $('#exampleModal').modal('show');
+          // this.failureAlert = true;
+          // this.successAlert = false;
+          // this.showBusyCursor = false;
       }
       else {
         this.successAlert = true;
